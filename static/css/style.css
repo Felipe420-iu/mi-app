@@ -1,0 +1,295 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.top-bar {
+    background-color: #0066cc;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    max-height: 30px;
+    margin-right: 10px;
+}
+
+.agency-name {
+    color: white;
+    font-size: 18px;
+}
+
+.nav-container {
+    display: flex;
+    background-color: #0066cc;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-container a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+.nav-container a.active {
+    background-color: #004999;
+}
+
+.nav-container a:hover {
+    background-color: #004999;
+}
+
+.search-icon {
+    font-size: 18px;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #555;
+}
+
+.welcome-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.welcome-text {
+    margin: 0;
+    line-height: 1.6;
+    color: #0066cc;
+    font-size: 14px;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.process-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border: none;
+    width: 200px;
+    font-size: 14px;
+}
+
+.process-button:hover {
+    background-color: #0052a3;
+}
+
+.copyright-text {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.seal-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    background-color: transparent;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.seal {
+    max-width: 1000px;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Estilos para el nuevo footer */
+.footer-nav {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: relative;
+    background-color: #f1f1f1;
+    padding: 20px 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.footer-title {
+    color: #003366;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    color: #333;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.contact-link {
+    color: #0066cc;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.gov-site {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dhs-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.gov-info p {
+    margin: 0;
+    color: #333;
+}
+
+.footer-links-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.security-advisory {
+    margin-bottom: 20px;
+}
+
+.ntas-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.chat-help {
+    display: flex;
+    align-items: center;
+}
+
+.chat-icon {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.copyright {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

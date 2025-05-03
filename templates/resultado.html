@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Consulta | USCIS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/png">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/fondo.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .resultado-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 100px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .resultado-container h1 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+        }
+        
+        .datos-solicitante {
+            margin-bottom: 30px;
+        }
+        
+        .datos-solicitante h2 {
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        .datos-fila {
+            display: flex;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .datos-etiqueta {
+            font-weight: bold;
+            width: 40%;
+            color: #333;
+        }
+        
+        .datos-valor {
+            width: 60%;
+        }
+        
+        .estado {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .estado-proceso {
+            background-color: #FFF3CD;
+            color: #856404;
+        }
+        
+        .estado-aprobado {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
+        
+        .estado-pendiente {
+            background-color: #F8D7DA;
+            color: #721C24;
+        }
+        
+        .botones {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            background-color: #004999;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Agencia de Inmigración" class="logo">
+            <span class="agency-name">Agencia de Inmigración</span>
+        </div>
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}">Inicio</a>
+            <a href="{{ url_for('consulta') }}" class="active">Consulta tu proceso</a>
+            <a href="#">Documentación</a>
+            <a href="#">Pagos Online</a>
+        </div>
+    </div>
+
+    <div class="resultado-container">
+        <h1>Información del Solicitante</h1>
+        
+        <div class="datos-solicitante">
+            <h2>Datos Personales</h2>
+            
+            <div class="datos-fila">
+                <div class="datos-etiqueta">Nombre Completo:</div>
+                <div class="datos-valor">{{ solicitante[2] }} {{ solicitante[3] }}</div>
+            </div>
+            
+            <div class="datos-fila">
+                <div class="datos-etiqueta">Número de Pasaporte:</div>
+                <div class="datos-valor">{{ solicitante[1] }}</div>
+            </div>
+            
+            <div class="datos-fila">
+                <div class="datos-etiqueta">País de Origen:</div>
+                <div class="datos-valor">{{ solicitante[4] }}</div>
+            </div>
+        </div>
+        
+        <div class="datos-solicitante">
+            <h2>Estado de la Solicitud</h2>
+            
+            <div class="datos-fila">
+                <div class="datos-etiqueta">Estado:</div>
+                <div class="datos-valor">
+                    {% if solicitante[5] == 'En proceso' %}
+                        <span class="estado estado-proceso">{{ solicitante[5] }}</span>
+                    {% elif solicitante[5] == 'Aprobado' %}
+                        <span class="estado estado-aprobado">{{ solicitante[5] }}</span>
+                    {% else %}
+                        <span class="estado estado-pendiente">{{ solicitante[5] }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="datos-fila">
+                <div class="datos-etiqueta">Fecha de Solicitud:</div>
+                <div class="datos-valor">{{ solicitante[6].strftime('%d/%m/%Y') }}</div>
+            </div>
+            
+            <div class="datos-fila">
+                <div class="datos-etiqueta">Comentarios:</div>
+                <div class="datos-valor">{{ solicitante[7] }}</div>
+            </div>
+        </div>
+        
+        <div class="botones">
+            <a href="{{ url_for('consulta') }}" class="btn">Nueva Consulta</a>
+            <a href="{{ url_for('home') }}" class="btn">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 USCIS. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | USCIS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/png">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Agencia de Inmigración" class="logo">
+            <span class="agency-name">Agencia de Inmigración</span>
+        </div>
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="active">Inicio</a>
+            <a href="{{ url_for('consulta') }}">Consulta tu proceso</a>
+            <a href="#">Documentacion</a>
+            <a href="#">Pagos Online</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>U.S. Citizenship and Immigration Services. Agencia de Inmigración de los EE.UU.</h1>
+        
+        <p class="subtitle">Accede a nuestros servicios de inmigración y ciudadanía, consulta tu estado migratorio, realiza pagos y más.</p>
+
+        <div class="welcome-box">
+            <p class="welcome-text">
+                Bienvenidos al portal de Servicios de Ciudadanía e Inmigración de los Estados Unidos (USCIS). Nos enorgullece apoyar a quienes desean vivir, trabajar o visitar los Estados Unidos. Ya sea que esté solicitando una visa, residencia permanente o ciudadanía. Explore nuestro sitio para encontrar la orientación que necesita y las herramientas para avanzar en su proceso de manera segura y efectiva.
+            </p>
+        </div>
+
+        <div class="button-container">
+            <a href="{{ url_for('consulta') }}" class="process-button">Iniciar el Proceso</a>
+        </div>
+    </div>
+
+    <div class="seal-container">
+        <img src="{{ url_for('static', filename='images/seal.jpeg') }}" alt="Sello oficial" class="seal">
+    </div>
+
+    <div class="footer-nav">
+        <a href="#">Arriba</a>
+        <div class="footer-links">
+            <a href="#">Temas</a>
+            <a href="#">Formularios</a>
+            <a href="#">Noticias</a>
+            <a href="#">Ciudadanía</a>
+            <a href="#">Residencia Permanente</a>
+            <a href="#">Leyes</a>
+            <a href="#">Herramientas</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="USCIS Logo">
+                <div class="footer-title">
+                    U.S. Citizenship and Immigration Services
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">𝕏</a>
+                <a href="#" class="social-icon">▶</a>
+                <a href="#" class="social-icon">📷</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">✉</a>
+                <a href="#" class="contact-link">Contáctenos</a>
+            </div>
+            
+            <div class="footer-info">
+                <div class="gov-site">
+                    <img src="{{ url_for('static', filename='images/dhs-logo.png') }}" alt="DHS Logo" class="dhs-logo">
+                    <div class="gov-info">
+                        <p>USCIS.gov</p>
+                        <p>Un sitio web oficial de U.S. Department of Homeland Security</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links-container">
+                    <div class="footer-column">
+                        <a href="#">Acerca de USCIS</a>
+                        <a href="#">Accesibilidad</a>
+                        <a href="#">Presupuesto y Rendimiento</a>
+                        <a href="#">Componentes de DHS</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="#">Ley de Libertad de Información</a>
+                        <a href="#">Datos de la Ley No FEAR</a>
+                        <a href="#">Privacidad y Descargo de Responsabilidad Legal</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="#">Mapa del Sitio</a>
+                        <a href="#">Oficina del Inspector General</a>
+                        <a href="#">Casa Blanca</a>
+                        <a href="#">USA.gov</a>
+                    </div>
+                </div>
+                
+                <div class="security-advisory">
+                    <img src="{{ url_for('static', filename='images/ntas-logo.png') }}" alt="NTAS Logo" class="ntas-logo">
+                    <p>NO CURRENT ADVISORIES</p>
+                    <p>Find the current advisory on your web page</p>
+                </div>
+                
+                <div class="chat-help">
+                    <img src="{{ url_for('static', filename='images/chat-icon.png') }}" alt="Chat Icon" class="chat-icon">
+                    <p>¿Necesitas ayuda? pregúntale a Emma</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 USCIS. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
