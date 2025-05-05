@@ -2,29 +2,149 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | USCIS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/png">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/fondo.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .registro-container {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 100px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .registro-container h1 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .registro-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .registro-form label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .registro-form input[type="text"],
+        .registro-form input[type="email"],
+        .registro-form input[type="date"],
+        .registro-form textarea {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .registro-form input[type="submit"] {
+            background-color: #0066cc;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .registro-form input[type="submit"]:hover {
+            background-color: #004999;
+        }
+        
+        .success {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+        
+        .error {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="top-bar">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Agencia de Inmigración" class="logo">
+            <span class="agency-name">Agencia de Inmigración</span>
+        </div>
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}">Inicio</a>
+            <a href="{{ url_for('consulta') }}">Consulta tu proceso</a>
+            <a href="{{ url_for('registro') }}" class="active">Registro</a>
+            <a href="#">Documentación</a>
+            <a href="#">Pagos Online</a>
+        </div>
+    </div>
+
+    <div class="registro-container">
         <h1>Formulario de Registro</h1>
-        <form action="/registrar" method="POST">
+        <form class="registro-form" action="/registrar" method="POST">
+            <label for="pasaporte">Número de Pasaporte:</label>
+            <input type="text" id="pasaporte" name="pasaporte" required>
+            
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
-
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" name="correo" required><br><br>
-
-            <label for="documento">Documento:</label>
-            <input type="text" id="documento" name="documento" required><br><br>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            
+            <label for="pais">País de Origen:</label>
+            <input type="text" id="pais" name="pais" required>
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+            
+            <label for="fecha_solicitud">Fecha de Solicitud:</label>
+            <input type="date" id="fecha_solicitud" name="fecha_solicitud" required>
+            
+            <label for="comentarios">Comentarios (opcional):</label>
+            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
 
             <input type="submit" value="Registrarse">
         </form>
 
         {% if mensaje %}
-            <p class="success">{{ mensaje }}</p>
+            <div class="success">
+                <p>{{ mensaje }}</p>
+            </div>
+        {% endif %}
+        
+        {% if error %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
         {% endif %}
     </div>
+
+    <footer>
+        <p>© 2024 USCIS. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

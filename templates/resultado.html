@@ -73,12 +73,22 @@
             color: #856404;
         }
         
+        .estado-enviado {
+            background-color: #FFD8A8;
+            color: #AD5700;
+        }
+        
+        .estado-pendiente {
+            background-color: #FFF3CD;
+            color: #856404;
+        }
+        
         .estado-aprobado {
             background-color: #D4EDDA;
             color: #155724;
         }
         
-        .estado-pendiente {
+        .estado-rechazado {
             background-color: #F8D7DA;
             color: #721C24;
         }
@@ -145,12 +155,18 @@
             <div class="datos-fila">
                 <div class="datos-etiqueta">Estado:</div>
                 <div class="datos-valor">
-                    {% if solicitante[5] == 'En proceso' %}
-                        <span class="estado estado-proceso">{{ solicitante[5] }}</span>
+                    {% if solicitante[5] == 'Enviado' %}
+                        <span class="estado estado-enviado">{{ solicitante[5] }}</span>
+                    {% elif solicitante[5] == 'Pendiente' %}
+                        <span class="estado estado-pendiente">{{ solicitante[5] }}</span>
                     {% elif solicitante[5] == 'Aprobado' %}
                         <span class="estado estado-aprobado">{{ solicitante[5] }}</span>
+                    {% elif solicitante[5] == 'Rechazado' %}
+                        <span class="estado estado-rechazado">{{ solicitante[5] }}</span>
+                    {% elif solicitante[5] == 'En proceso' %}
+                        <span class="estado estado-proceso">{{ solicitante[5] }}</span>
                     {% else %}
-                        <span class="estado estado-pendiente">{{ solicitante[5] }}</span>
+                        <span class="estado">{{ solicitante[5] }}</span>
                     {% endif %}
                 </div>
             </div>

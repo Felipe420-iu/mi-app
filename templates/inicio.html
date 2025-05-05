@@ -6,6 +6,210 @@
     <title>Inicio | USCIS</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/logo1.png') }}" type="image/png">
+    <style>
+        /* Estilos específicos para el footer */
+        footer {
+            margin-top: 50px;
+        }
+        
+        .footer-nav {
+            background-color: #f1f1f1;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .footer-links a {
+            margin: 0 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer-container {
+            padding: 20px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .footer-title {
+            color: #003366;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .social-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: #ddd;
+            color: #333;
+            border-radius: 3px;
+            margin-right: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Nuevo estilo para el footer azul exactamente como en la imagen */
+        .footer-info {
+            background-color: #0a5796;
+            color: white;
+            padding: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            position: relative;
+        }
+        
+        .gov-site {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+        }
+        
+        .dhs-logo {
+            height: 40px;
+            margin-right: 15px;
+            background-color: white;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        
+        .gov-info p {
+            margin: 0;
+            color: white;
+        }
+        
+        .gov-info p:first-child {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .footer-links-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        /* Estilo actualizado para el cuadro negro de NTAS */
+        .security-advisory {
+            background-color: #002244;
+            padding: 15px;
+            border-radius: 0;
+            text-align: center;
+            position: absolute;
+            top: 30px;
+            right: -150px;
+            width: 230px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .ntas-logo {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .security-advisory p {
+            margin: 5px 0 5px -10px;
+            font-size: 14px;
+        }
+        
+        .security-advisory p:first-of-type {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        
+        .chat-help {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff00;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .chat-icon {
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Ajustes adicionales para que coincida exactamente con la imagen */
+        .footer-info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .footer-left {
+            width: 70%;
+        }
+    </style>
 </head>
 <body>
     <div class="top-bar">
@@ -43,15 +247,6 @@
 
     <div class="footer-nav">
         <a href="#">Arriba</a>
-        <div class="footer-links">
-            <a href="#">Temas</a>
-            <a href="#">Formularios</a>
-            <a href="#">Noticias</a>
-            <a href="#">Ciudadanía</a>
-            <a href="#">Residencia Permanente</a>
-            <a href="#">Leyes</a>
-            <a href="#">Herramientas</a>
-        </div>
     </div>
 
     <footer>
@@ -64,53 +259,53 @@
             </div>
             
             <div class="social-links">
-                <a href="#" class="social-icon">f</a>
-                <a href="#" class="social-icon">𝕏</a>
-                <a href="#" class="social-icon">▶</a>
-                <a href="#" class="social-icon">📷</a>
-                <a href="#" class="social-icon">in</a>
-                <a href="#" class="social-icon">✉</a>
-                <a href="#" class="contact-link">Contáctenos</a>
+                <a href="https://www.facebook.com/uscis.es" class="social-icon">f</a>
+                <a href="https://x.com/uscis_es" class="social-icon">𝕏</a>
+                <a href="https://www.youtube.com/uscis" class="social-icon">▶</a>
+                <a href="https://www.instagram.com/uscis/#" class="social-icon">📷</a>
+                <a href="https://www.linkedin.com/company/uscis" class="social-icon">in</a>
+                <a href="https://public.govdelivery.com/accounts/USDHSCISESP/subscriber/new" class="social-icon">✉</a>
+                <a href="https://www.uscis.gov/es/acerca-de-nosotros/contactenos" class="contact-link">Contáctenos</a>
             </div>
             
             <div class="footer-info">
-                <div class="gov-site">
-                    <img src="{{ url_for('static', filename='images/dhs-logo.png') }}" alt="DHS Logo" class="dhs-logo">
-                    <div class="gov-info">
-                        <p>USCIS.gov</p>
-                        <p>Un sitio web oficial de U.S. Department of Homeland Security</p>
+                <div class="footer-info-container">
+                    <div class="footer-left">
+                        <div class="gov-site">
+                            <img src="{{ url_for('static', filename='images/logoffooter.jpg') }}" alt="DHS Logo" class="dhs-logo">
+                            <div class="gov-info">
+                                <p>USCIS.gov</p>
+                                <p>Un sitio web oficial de U.S. Department of Homeland Security</p>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-links-container">
+                            <div class="footer-column">
+                                <a href="#">Acerca de USCIS</a>
+                                <a href="#">Accesibilidad</a>
+                                <a href="#">Presupuesto y Rendimiento</a>
+                                <a href="#">Componentes de DHS</a>
+                            </div>
+                            <div class="footer-column">
+                                <a href="#">Ley de Libertad de Información</a>
+                                <a href="#">Datos de la Ley No FEAR</a>
+                                <a href="#">Privacidad y Descargo de Responsabilidad Legal</a>
+                            </div>
+                            <div class="footer-column">
+                                <a href="https://www.uscis.gov/es/mapa-del-sitio">Mapa del Sitio</a>
+                                <a href="#">Oficina del Inspector General</a>
+                                <a href="#">Casa Blanca</a>
+                                <a href="#">USA.gov</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="footer-links-container">
-                    <div class="footer-column">
-                        <a href="#">Acerca de USCIS</a>
-                        <a href="#">Accesibilidad</a>
-                        <a href="#">Presupuesto y Rendimiento</a>
-                        <a href="#">Componentes de DHS</a>
+                    
+                    <!-- Cuadro negro de NTAS reposicionado -->
+                    <div class="security-advisory">
+                        <img src="{{ url_for('static', filename='images/footer.jpg') }}" alt="NTAS Logo" class="ntas-logo">
+                        <p>NO CURRENT ADVISORIES</p>
+                        <p>Find the current advisory on your web page</p>
                     </div>
-                    <div class="footer-column">
-                        <a href="#">Ley de Libertad de Información</a>
-                        <a href="#">Datos de la Ley No FEAR</a>
-                        <a href="#">Privacidad y Descargo de Responsabilidad Legal</a>
-                    </div>
-                    <div class="footer-column">
-                        <a href="#">Mapa del Sitio</a>
-                        <a href="#">Oficina del Inspector General</a>
-                        <a href="#">Casa Blanca</a>
-                        <a href="#">USA.gov</a>
-                    </div>
-                </div>
-                
-                <div class="security-advisory">
-                    <img src="{{ url_for('static', filename='images/ntas-logo.png') }}" alt="NTAS Logo" class="ntas-logo">
-                    <p>NO CURRENT ADVISORIES</p>
-                    <p>Find the current advisory on your web page</p>
-                </div>
-                
-                <div class="chat-help">
-                    <img src="{{ url_for('static', filename='images/chat-icon.png') }}" alt="Chat Icon" class="chat-icon">
-                    <p>¿Necesitas ayuda? pregúntale a Emma</p>
                 </div>
             </div>
         </div>
@@ -119,5 +314,9 @@
             <p>© 2024 USCIS. Todos los derechos reservados.</p>
         </div>
     </footer>
+    
+    <div class="chat-help">
+        <img src="{{ url_for('static', filename='images/chat.png') }}" alt="Chat Icon" class="chat-icon">
+    </div>
 </body>
 </html>
