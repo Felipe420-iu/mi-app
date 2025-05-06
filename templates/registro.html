@@ -48,6 +48,7 @@
         .registro-form input[type="text"],
         .registro-form input[type="email"],
         .registro-form input[type="date"],
+        .registro-form select,
         .registro-form textarea {
             padding: 12px;
             margin-bottom: 20px;
@@ -99,7 +100,6 @@
             <a href="{{ url_for('consulta') }}">Consulta tu proceso</a>
             <a href="{{ url_for('registro') }}" class="active">Registro</a>
             <a href="#">Documentación</a>
-            <a href="#">Pagos Online</a>
         </div>
     </div>
 
@@ -123,6 +123,16 @@
             
             <label for="fecha_solicitud">Fecha de Solicitud:</label>
             <input type="date" id="fecha_solicitud" name="fecha_solicitud" required>
+            
+            <label for="tipo_visa">Tipo de Visa:</label>
+            <select id="tipo_visa" name="tipo_visa" required>
+                <option value="">Selecciona un tipo de visa</option>
+                <option value="Turista">Visa de Turismo</option>
+                <option value="Estudiante">Visa con Permiso H-1B</option>
+                <option value="Trabajo">Visa con permiso de Trabajo H-2B</option>
+                <option value="Residencia">Residencia Permanente</option>
+                <option value="Asilo">Permiso de Trabajo</option>
+            </select>
             
             <label for="comentarios">Comentarios (opcional):</label>
             <textarea id="comentarios" name="comentarios" rows="4"></textarea>

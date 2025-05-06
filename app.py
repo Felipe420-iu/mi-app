@@ -34,9 +34,10 @@ def registrar():
             nombre = request.form['nombre']
             apellido = request.form['apellido']
             pais = request.form['pais']
-            correo = request.form['correo']
             fecha_solicitud = request.form['fecha_solicitud']
+            tipo_visa = request.form['tipo_visa']  # Nuevo campo
             comentarios = request.form.get('comentarios', '')
+            correo = request.form.get('correo', '')
             
             # Crear cursor para la base de datos
             cursor = mysql.connection.cursor()
@@ -44,9 +45,9 @@ def registrar():
             # Ejecutar consulta para insertar datos
             cursor.execute("""
                 INSERT INTO solicitantes 
-                (pasaporte, nombre, apellido, pais, correo, fecha_solicitud, comentarios) 
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
-            """, [pasaporte, nombre, apellido, pais, correo, fecha_solicitud, comentarios])
+                (pasaporte, nombre, apellido, pais, fecha_solicitud, tipo_visa, comentarios, correo) 
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, [pasaporte, nombre, apellido, pais, fecha_solicitud, tipo_visa, comentarios, correo])
             
             # Confirmar la inserción
             mysql.connection.commit()
